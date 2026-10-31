@@ -13,8 +13,7 @@ def start(message):
     bot.send_message(
         message.chat.id,
         "💗 به ربات پیام ناشناس شقایق خوش اومدی!\n\n"
-        "💌 اینجا می‌تونی حرف‌هات رو ناشناس برام بفرستی. 🎀"
-    )
+     )
 
 @bot.message_handler(func=lambda m: m.chat.id == ADMIN_ID and
                      m.reply_to_message is not None,
@@ -60,7 +59,7 @@ def receive(message):
     senders[sent.message_id] = message.from_user.id
     senders[copied.message_id] = message.from_user.id
 
-    bot.reply_to(message, "✅ پیامت به شقایق رسید!")
+    bot.reply_to(message, "پیام ناشناست با موفقیت ارسال شد. 🤍")
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith("id_"))
 def show_id(call):
